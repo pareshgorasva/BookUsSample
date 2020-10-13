@@ -1,0 +1,83 @@
+<mat-card fxFlex="700%;">
+  <div fxLayout="row" fxLayout.xs="column">
+    <h3 style="margin: 0;color: #555;">
+      Therapist Rating
+    </h3>
+  </div>
+  <div fxLayout="row" fxLayout.xs="column" style="margin: 16px 0 0 0;">
+    <div fxLayout="column" fxFlex="30%" fxLayoutAlign="center center">
+      <span style="color: #5a5ad6; font-size: 24px;">4.8</span>
+      <div fxLayout="column" fxLayoutAlign="start start">
+        <div fxLayout="row" fxLayoutAlign="start start">
+
+          <mat-icon color="primary">star</mat-icon>
+          <mat-icon color="primary">star</mat-icon>
+          <mat-icon color="primary">star</mat-icon>
+          <mat-icon color="primary">star</mat-icon>
+        </div>
+      </div>
+      <span style="color: #888888;">2,800 Reviews</span>
+    </div>
+    <div fxLayout="column" fxFlex="70%" fxLayoutAlign="start start">
+      <div fxLayout="Row"  style="width: 100%; " class="reviewBar" fxLayoutAlign="start start">
+        5 &nbsp;<mat-progress-bar class="my-color" mode="determinate" value="83"></mat-progress-bar>
+      </div>
+      <div fxLayout="Row"  style="width: 100%;" class="reviewBar" fxLayoutAlign="start start">
+        4 &nbsp;<mat-progress-bar class="my-color" mode="determinate" value="53"></mat-progress-bar>
+      </div>
+      <div fxLayout="Row"  style="width: 100%;" class="reviewBar" fxLayoutAlign="start start">
+        3 &nbsp;<mat-progress-bar class="my-color" mode="determinate" value="39"></mat-progress-bar>
+      </div>
+      <div fxLayout="Row"  style="width: 100%;" class="reviewBar" fxLayoutAlign="start start">
+        2 &nbsp;<mat-progress-bar class="my-color" mode="determinate" value="24"></mat-progress-bar>
+      </div>
+      <div fxLayout="Row"  style="width: 100%;" class="reviewBar" fxLayoutAlign="start start">
+        1 &nbsp;<mat-progress-bar class="my-color" mode="determinate" value="19"></mat-progress-bar>
+      </div>
+    </div>
+
+  </div>
+  <div fxLayout="row" fxLayout.xs="column">
+    <div fxLayout="column" fxFlex>
+      <h3 style="margin: 0;">
+        Serive Reviews
+      </h3>
+    </div>
+    <div fxLayout="column" fxLayoutGap="12px" fxLayoutAlign="center end">
+      <button mat-raised-button>Sort</button>
+    </div>
+
+  </div>
+  <div *ngFor="let i of [1,2,3,4,5]" style="margin:8px 0 8px 0 ;">
+    <div fxLayout="row" fxLayout.xs="column">
+      <div fxLayout="column">
+        <div class="profile_photo">
+          <div class="circle_img">
+            J
+          </div>
+
+          <b>
+            &nbsp; &nbsp; Joshua Ramiz
+          </b>
+        </div>
+      </div>
+    </div>
+    <div fxLayout="row" fxLayout.xs="column">
+      <div fxLayout="row">
+        <mat-icon color="primary">star</mat-icon>
+        <mat-icon color="primary">star</mat-icon>
+        <mat-icon color="primary">star</mat-icon>
+        <mat-icon color="primary">star</mat-icon>
+      </div>
+
+    </div>
+    <div fxLayout="row" fxLayout.xs="column">
+      <div fxLayout="row" style="color: #888888;">Best message i have had that i am righting. kem cho tumhari amma
+        ko cd chahiye hogi</div>
+
+    </div>
+  </div>
+  <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="center center" style="margin: 24px;">
+    <button mat-flat-button color="primary"><span style="padding: 0 16px; margin: 16px;">Show More</span></button>
+  </div>
+</mat-card>

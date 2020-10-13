@@ -1,0 +1,63 @@
+<mat-card fxFlex="700%;" >
+  <div fxLayout="row" fxLayout.xs="column" >
+    <div fxLayout="column" fxFlex>
+      <h3 style="margin: 0;">
+        Top Therapist
+      </h3>
+    </div>
+    <div fxLayout="column" fxLayoutGap="12px" fxLayoutAlign="center end">
+      <button mat-raised-button>Sort</button>
+    </div>
+
+  </div>
+  <div *ngFor="let i of [1,2,3,4,5]" style="margin:8px 0 8px 0 ; padding: 8px 0 24px 0; border-bottom: 1px solid #888;">
+    <div fxLayout="row" fxLayout.xs="column">
+      <div fxLayout="column">
+        <div class="profile_photo">
+          <div class="circle_img">
+            <img src="./assets/user.png" style="width: 54px;
+            height: 54px;border-radius: 50%;">
+          </div>
+
+          <div fxLayout="row" fxLayout.xs="column" fxFlexFill>
+
+            <div fxLayout="column" fxLayoutAlign="start start" fxFlex="100%;">
+              <div fxLayout="column" fxLayoutAlign="start start" style="margin-left: 8px;">
+                <div fxLayout="column" fxLayoutAlign="start start">
+                  <b>
+                    &nbsp; Joshua Ramiz
+                  </b>
+                </div>
+                <div fxLayout="column" fxLayoutAlign="start start">
+                  <div fxLayout="row" fxLayoutAlign="start start">
+
+                    <mat-icon color="primary">star</mat-icon>
+                    <mat-icon color="primary">star</mat-icon>
+                    <mat-icon color="primary">star</mat-icon>
+                    <mat-icon color="primary">star</mat-icon>
+                  </div>
+                </div>
+                <div fxLayout="column" fxLayoutAlign="start start">
+                  <div fxLayout="row" fxLayoutAlign="start start" style="color: #888;">
+
+                    &nbsp; 278 Reviews
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+      <div fxLayout="column" fxLayoutAlign="end end" fxFlex="700%;" *ngIf="i==1||i==2||i==3">
+        <div fxLayout="column" fxLayoutAlign="end end"fxFlex="700%;" style="margin-left: 8px;">
+          <img src="./assets/medal.png" style="width: 54px;height: 54px;border-radius: 50%;">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="center center" style="margin: 24px;">
+    <button mat-flat-button color="primary"><span style="padding: 0 16px;">Show More</span></button>
+  </div>
+</mat-card>

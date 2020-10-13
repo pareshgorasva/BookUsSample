@@ -1,0 +1,16 @@
+<ng-container *ngIf="(progressData.title != undefined)">
+    <div class="content">
+        <!-- <h2>{{progressData.title}}</h2>
+        <h4>{{progressData.subTitle}}</h4> -->
+        <div class="row progressBar" fxLayout="row" fxLayoutAlign="space-around none">
+            <!-- <div *ngFor="let data of progressData.data;let idx = index" [ngClass]="{'col-sm-6':true,'first':(idx == 0),'second':(idx == 1) }">{{data.percentage + ' ' + data.title}}</div> -->
+            <div class="base col-12">
+                <div class="bar" [ngStyle]="{width:progressData.data[0].percentage}"></div>
+            </div>
+            <!-- <div *ngFor="let data of progressData.data" class="col-sm-6 statistics">
+                <p>{{data.value}}</p>
+                <small>{{data.title}}</small>
+            </div> -->
+        </div>
+    </div>
+</ng-container>

@@ -1,0 +1,85 @@
+<mat-card fxFlex="100%;">
+  <h2 style="color: #555;">Sales</h2>
+  <div fxLayout="row" fxLayout.xs="column" class="row">
+    <div fxFlex="25%" fxFlex.xs="100%" layout="column" class="mat-cloumn">
+      <mat-form-field appearance="fill">
+        <mat-label>Location</mat-label>
+        <mat-select multiple class="user-control">
+          <mat-option value="{{store.id}}" *ngFor="let store of stores">{{store.name}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div fxFlex="25%" fxFlex.xs="100%" layout="column" class="mat-cloumn">
+      <mat-form-field appearance="fill">
+        <mat-label>View</mat-label>
+        <mat-select class="user-control" (selectionChange)="viewSelectedVal(view.value)" #view>
+          <mat-option value="w">Weekly</mat-option>
+          <mat-option value="m">Monthly</mat-option>
+          <mat-option value="y">Yearly</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div fxFlex="25%" fxFlex.xs="100%" layout="column" class="mat-cloumn" *ngIf="(viewSelected == 'w')">
+      <mat-form-field appearance="fill">
+        <mat-label>Range</mat-label>       
+        <input matInput [matDatepicker]="range">
+        <mat-datepicker-toggle matSuffix [for]="range"></mat-datepicker-toggle>
+        <mat-datepicker #range color="primary"></mat-datepicker>
+      </mat-form-field>
+    </div>
+
+    <div fxFlex="25%" fxFlex.xs="100%" layout="column" class="mat-cloumn" *ngIf="(viewSelected == 'm')">
+      <mat-form-field appearance="fill">
+        <mat-label>Range</mat-label>       
+          <mat-select class="user-control">
+            <mat-option value="{{month}}" *ngFor="let month of months">{{month}}</mat-option>
+          </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div fxFlex="25%" fxFlex.xs="100%" layout="column" class="mat-cloumn" *ngIf="(viewSelected == 'y')">
+      <mat-form-field appearance="fill">
+        <mat-label>Range</mat-label>       
+          <mat-select class="user-control">
+            <mat-option value="{{year}}" *ngFor="let year of years">{{year}}</mat-option>
+          </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div fxFlex="25%" fxFlex.xs="100%" layout="column" class="mat-cloumn" *ngIf="(viewSelected == 'w')">
+      <mat-form-field appearance="fill">
+        <mat-label>Compare</mat-label>       
+        <input matInput [matDatepicker]="compare">
+        <mat-datepicker-toggle matSuffix [for]="compare"></mat-datepicker-toggle>
+        <mat-datepicker #compare color="primary"></mat-datepicker>
+      </mat-form-field>
+    </div>
+
+    <div fxFlex="25%" fxFlex.xs="100%" layout="column" class="mat-cloumn" *ngIf="(viewSelected == 'm')">
+      <mat-form-field appearance="fill">
+        <mat-label>Compare</mat-label>       
+          <mat-select class="user-control">
+            <mat-option value="{{month}}" *ngFor="let month of months">{{month}}</mat-option>
+          </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div fxFlex="25%" fxFlex.xs="100%" layout="column" class="mat-cloumn" *ngIf="(viewSelected == 'y')">
+      <mat-form-field appearance="fill">
+        <mat-label>Compare</mat-label>       
+          <mat-select class="user-control">
+            <mat-option value="{{year}}" *ngFor="let year of years">{{year}}</mat-option>
+          </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+  <div fxLayout="row" fxLayout.xs="column" class="row">
+    <div fxFlex="100%" layout="column" class="mat-cloumn">
+      <app-line-chart></app-line-chart>
+    </div>
+  </div>
+  
+  
+</mat-card>

@@ -1,0 +1,22 @@
+<mat-card fxFlex="700%;">
+  <div style="height:100%" fxFlexFill fxLayout="column">
+    <div fxLayout="column" fxLayoutGap="12px" fxFlex>
+      <div fxFlex>
+        <div fxLayout="row" fxLayout.xs="column">
+          <div fxLayout="column" fxFlex>
+            <h3 style="margin: 0;color: #555;">
+              Payment Methods
+            </h3>
+          </div>
+          <div fxLayout="column" fxLayoutGap="12px" fxLayoutAlign="center end">
+            <mat-icon color="primary">help_outline</mat-icon>
+          </div>
+
+        </div>
+        <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="center center">
+          <app-payment-method-pie-chart></app-payment-method-pie-chart>
+        </div>
+      </div>
+    </div>
+  </div>
+</mat-card>

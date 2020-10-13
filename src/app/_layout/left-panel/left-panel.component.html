@@ -1,0 +1,15 @@
+<header [ngClass]="{'open':(isExpanded)}">
+  <mat-icon>account_circle</mat-icon>
+  <h3 *ngIf="isExpanded">Username</h3>
+  <div class="hamburger" (click)="toggleSideNav()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</header>
+<mat-list>
+  <mat-list-item *ngFor="let nav of navs">
+    <mat-icon mat-list-icon>{{nav.icon}}</mat-icon>
+    <h4 mat-line *ngIf="isExpanded">{{nav.title}}</h4>
+  </mat-list-item>
+</mat-list>

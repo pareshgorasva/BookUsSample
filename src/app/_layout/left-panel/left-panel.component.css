@@ -1,0 +1,8 @@
+header {background-color:#1e2129;height:30px;color:#FFF;padding:8px;}
+header.open {width:250px;}
+header mat-icon {height:30px;width:30px;font-size:30px;float:left;transition:all 0.5s ease; opacity: 0;}
+header.open mat-icon {opacity:1;}
+header h3 {font-size: 16px;float: left;margin-left: 10px;margin-top:4px;transition:all 0.5s ease;font-weight: normal;}
+mat-list-item {color:#FFF !important;height:40px !important;}
+.hamburger {width:18px;right:0;margin-right: 15px;margin-top:12px;cursor: pointer;position: absolute;z-index:123;top:0;}
+.hamburger span {display: block;width: 18px;height: 3px;background-color: #FFF;margin-bottom:3px;}

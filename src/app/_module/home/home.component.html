@@ -1,0 +1,178 @@
+<div fxLayout="row" fxLayout.xs="column">
+  <div fxFlex="70%" layout="column" class="mat-cloumn">
+    <app-sales></app-sales>
+  </div>
+  <div fxFlex="30%" layout="column" class="mat-cloumn">
+    <div style="height:100%" fxLayout="column">
+      <div fxLayout="column" fxLayoutGap="6px" fxFlex>
+        <div fxFlex style="height: 300px;">
+          <mat-card fxFlex="700%;">
+            <div fxLayout="row"  fxLayout.xs="column">
+              <h3 style="margin: 0;color: #555;">
+                Marketing Source
+              </h3>
+            </div>
+            <div fxLayout="row" fxFlexFill fxLayout.xs="column" fxLayoutAlign="center center">
+              <app-pie-chart style="width: 100%;"></app-pie-chart>
+            </div>
+          </mat-card>
+        </div>
+        <div fxFlex >
+          <mat-card fxFlex="700%;">
+            <div fxLayout="row" fxLayout.xs="column">
+              <h3 style="margin: 0;color: #555;">
+                Current Cash in Drawer
+              </h3>
+            </div>
+            <div fxLayout="row" fxLayout.xs="column" fxFlexFill fxLayoutAlign="center center">
+              <div layout="column" fxFlex="30%" fxFlexFill fxLayoutAlign="center center" style="height: 100%;">
+                <div>
+                  <h4 style="color: #5a5ad6;">$ 12,430</h4>
+                  <p style="color: #555;">Kalgoorlie</p>
+                </div>
+              </div>
+              <div class="vertLine">
+
+              </div>
+              <div layout="column" fxFlex="30%" fxFlexFill fxLayoutAlign="center center">
+                <div>
+                  <h4 style="color: #5a5ad6;">$ 12,430</h4>
+                  <p style="color: #555;">Busselton</p>
+                </div>
+              </div>
+              <div class="vertLine">
+
+              </div>
+              <div layout="column" fxFlex="30%" fxFlexFill fxLayoutAlign="center center">
+                <div>
+                  <h4 style="color: #5a5ad6;">$ 12,430</h4>
+                  <p style="color: #555;">Mandurah</p>
+                </div>
+              </div>
+            </div>
+          </mat-card> 
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div style="margin: 16px 8px 0 8px;">
+  <div fxLayout="row" fxFlexFill fxLayout.xs="column">
+    <mat-card fxFlex="700%;">
+      <div fxFlex="30%" fxFlexFill layout="column" class="mat-cloumn">
+        <div style="height:100%" fxLayout="column">
+          <div fxLayout="column" fxLayoutGap="12px" fxFlex>
+            <div fxFlex>
+              <div fxLayout="row" fxLayout.xs="column">
+                <h3 style="margin: 0;color: #555;">
+                  Revenue
+                </h3>
+              </div>
+              <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="center center">
+                <app-revenue-pie-chart></app-revenue-pie-chart>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="vertLine-1">
+      </div>
+      <div fxFlex="35%" fxFlexFill layout="column" class="mat-cloumn">
+        <div style="height:100%" fxLayout="column">
+          <div fxLayout="column" fxLayoutGap="12px" fxFlex>
+            <div fxFlex>
+              <div fxLayout="row" fxLayout.xs="column">
+                <h3 style="margin: 0;color: #555;">
+                  Services
+                </h3>
+              </div>
+              <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="center center">
+                <app-services-pie-chart></app-services-pie-chart>
+              </div>
+              <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="end end">
+                <button mat-flat-button color="primary"><span style="padding: 0 16px;">Show More</span></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="vertLine-1"></div>
+      <div fxFlex="35%" fxFlexFill layout="column" class="mat-cloumn">
+        <div style="height:100%" fxLayout="column">
+          <div fxLayout="column" fxLayoutGap="12px" fxFlex>
+            <div fxFlex>
+              <div fxLayout="row" fxLayout.xs="column">
+                <h3 style="margin: 0;color: #555;">
+                  Products
+                </h3>
+              </div>
+              <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="center center">
+                <app-products-pie-chart></app-products-pie-chart>
+              </div>
+              <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="end end">
+                <button mat-flat-button color="primary"><span style="padding: 0 16px;">Show More</span></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </mat-card>
+  </div>
+</div>
+<div style="margin: 16px 0 0 0;">
+  <div fxLayout="row" fxFlexFill fxLayoutAlign="center stretch" fxLayout.xs="column">
+    <div fxFlex="30%" layout="column" class="mat-cloumn">
+      <div style="height:100%" fxLayout="column">
+        <div fxLayout="column" fxLayoutGap="12px" fxFlex>
+          <div fxFlex >
+           <app-customer-gender></app-customer-gender>
+          </div>
+          <div fxFlex>
+           <app-payment-methods></app-payment-methods>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div fxFlex="30%" fxFlexFill layout="column" class="mat-cloumn">
+      <div style="height:100%" fxLayout="column">
+        <div fxLayout="column" fxLayoutGap="12px" fxFlex>
+          <div fxFlex>
+          <app-new-vs-return></app-new-vs-return>
+          </div>
+          <div fxFlex>
+         <app-profit></app-profit>
+          </div>
+        </div>
+      </div>
+   </div>
+
+    <div fxFlex="40%" fxFlexFill  layout="column" class="mat-cloumn" >
+      <app-top-spender-customer></app-top-spender-customer>
+    </div>
+  </div>
+</div>
+<div style="margin: 16px 0 0 0;">
+  <div fxLayout="row" fxLayout.xs="column">
+    <div fxFlex="50%" layout="column" class="mat-cloumn">
+      <app-average-waiting-time></app-average-waiting-time>
+    </div>
+    <div fxFlex="50%" layout="column" class="mat-cloumn">
+      <app-appointment-log></app-appointment-log>
+    </div>
+  </div>
+</div>
+
+<div style="margin: 16px 0 0 0;">
+  <div fxLayout="row" fxLayout.xs="column">
+    <div fxFlex="35%" layout="column" class="mat-cloumn">
+      <app-overall-business-rating></app-overall-business-rating>
+    </div>
+    <div fxFlex="30%" layout="column" class="mat-cloumn">
+      <app-top-therapist></app-top-therapist>
+    </div>
+    <div fxFlex="35%" layout="column" class="mat-cloumn">
+     <app-therapist-rating></app-therapist-rating>
+    </div>
+  </div>
+</div>

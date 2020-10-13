@@ -1,0 +1,8 @@
+<mat-sidenav-container class="main" autosize>
+  <mat-sidenav #leftPanel  mode="side" opened="true" class="leftPanel">
+    <app-left-panel (opened)="toggleSideNav($event)"></app-left-panel>
+  </mat-sidenav>
+  <div #content class="mainPanel">
+    <router-outlet></router-outlet>
+  </div>
+</mat-sidenav-container>

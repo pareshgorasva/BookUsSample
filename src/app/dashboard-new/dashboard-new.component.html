@@ -1,0 +1,418 @@
+<ng-container #fullPage>
+    <!-- <ng-container #firstRow> -->
+        <div fxLayout="column" fxLayoutAlign="space-around none" style="width:100%">
+    <div>
+    <div fxLayout="row" fxLayoutAlign="space-around none" style="width: 100%;" >
+        <div fxFlex="60" class="border-out" >
+            <mat-card>
+                 <div fxLayout="column" fxLayoutAlign="space-around none">
+                    <div fxFlex="5">
+                        <p>Sales</p>
+                    </div>
+                    <div fxFlex="20">
+                        <div fxLayout="row" fxLayoutAlign="space-around none">
+                            <div fxFlex="25">
+                                <mat-form-field appearance="fill" style="width: 95%;">
+                                    <mat-label>Toppings</mat-label>
+                                    <mat-select [formControl]="toppings" multiple>
+                                      <mat-select-trigger>
+                                        {{toppings.value ? toppings.value[0] : ''}}
+                                        <span *ngIf="toppings.value?.length > 1" class="example-additional-selection">
+                                          (+{{toppings.value.length - 1}} {{toppings.value?.length === 2 ? 'other' : 'others'}})
+                                        </span>
+                                      </mat-select-trigger>
+                                      <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
+                                    </mat-select>
+                                  </mat-form-field>
+                            </div>
+                            <div fxFlex="25">
+                                <mat-form-field appearance="fill" style="width: 95%;">
+                                    <mat-label>Favorite food</mat-label>
+                                    <mat-select>
+                                      <mat-option *ngFor="let food of foods" [value]="food.value">
+                                        {{food.viewValue}}
+                                      </mat-option>
+                                    </mat-select>
+                                  </mat-form-field>
+                            </div>
+                            <div fxFlex="25">
+                                <mat-form-field appearance="fill" style="width: 95%;">
+                                    <mat-label>Choose a date</mat-label>
+                                    <input matInput [matDatepicker]="picker">
+                                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                    <mat-datepicker #picker></mat-datepicker>
+                                  </mat-form-field>
+                            </div>
+                            <div fxFlex="25">
+                                <mat-form-field appearance="fill" style="width: 95%;">
+                                    <mat-label>Choose a date</mat-label>
+                                    <input matInput [matDatepicker]="picker2">
+                                    <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                                    <mat-datepicker #picker2></mat-datepicker>
+                                  </mat-form-field>
+                            </div>
+                        </div>
+                    </div>
+                    <div fxFlex="75">
+                        <div id="lineChart"></div>
+                    </div>
+                 </div>
+            </mat-card>
+        </div>
+        <div fxFlex="40" class="border-out" >
+        <div fxLayout="column" fxLayoutAlign="space-around none" >
+            <div fxFlex="80" class="border-out">
+                <mat-card>
+                    <div fxLayout="column" fxLayoutAlign="space-around none">
+                        <div fxFlex="10">
+                            <p>Marketing Source</p>
+                        </div>
+                        <div fxFlex="90">
+                            <div id="pieChartFirst"></div>
+                        </div>
+                    </div>
+                </mat-card>
+            </div>
+            <div fxFlex="20" class="border-out">
+                <mat-card>
+                    <div fxLayout="column" fxLayoutAlign="space-around none" >
+                        <div fxFlex="10">
+                            <p>Current Cash In Drawer</p>
+                        </div>
+                        <div fxFlex="90">
+                            <div fxLayout="row" fxLayoutAlign="space-around none">
+                                <div fxFlex="33">
+                                    <p class="copy_demo">$12,345</p>
+                                    <p class="copy_demo1">Kalgoorie</p>
+                                </div>
+                                <div fxFlex="33">
+                                    <p class="copy_demo">$14,344</p>
+                                    <p class="copy_demo1">Busselton</p>
+                                </div>
+                                <div fxFlex="33">
+                                    <p class="copy_demo">$9,781</p>
+                                    <p class="copy_demo1">Mandurah</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </mat-card>
+            </div>
+        </div>        
+        </div>
+    </div>
+    </div>
+    <div >
+        <div fxLayout="row" fxLayoutAlign="space-around none" style="width: 100%;">
+            <div fxFlex="32" class="border-out">
+                <mat-card>
+                    <div fxLayout="row" fxLayoutAlign="space-around none">
+                        <div fxFlex="80">
+                            <div id="pieChartFirst1"></div>
+                        </div>
+                        <div fxFlex="20">
+                            <div fxLayout="column" fxLayoutAlign="space-around none">
+                                <div fxFlex="33">
+                                    <p class="new_demo1">Services</p>
+                                    <p class="new_demo">$60.56</p>
+                                </div>
+                                <div fxFlex="33">
+                                    <p class="new_demo1">Products</p>
+                                    <p class="new_demo">$43.88</p>
+                                </div>
+                                <div fxFlex="33">
+                                    <p class="new_demo1">Vouchers</p>
+                                    <p class="new_demo">$8.99</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </mat-card>
+            </div>
+            <div fxFlex="32" class="border-out">
+                <mat-card>
+                    <div fxLayout="column" fxLayoutAlign="space-around none">
+                        <div fxFlex="10">
+                            <p>Service</p>
+                        </div>
+                        <div fxFlex="90">
+                            <div id="pieChartFirst2"></div>
+                        </div>
+                    </div>
+                </mat-card>
+            </div>
+            <div fxFlex="32" class="border-out">
+                <mat-card>
+                    <div fxLayout="column" fxLayoutAlign="space-around none">
+                        <div fxFlex="10">
+                            <p>Products</p>
+                        </div>
+                        <div fxFlex="90">
+                            <div id="pieChartFirst3"></div>
+                        </div>
+                    </div>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div fxLayout="row" fxLayoutAlign="space-around none" style="width: 100%;">
+            <div fxFlex="60">
+                <div fxLayout="row" fxLayoutAlign="space-around none">
+                    <div fxFlex="50">
+                        <div fxLayout="column" fxLayoutAlign="space-around none">
+                            <div fxFlex="50" class="border-out">
+                                <mat-card>
+                                    <div fxLayout="column" fxLayoutAlign="space-around none">
+                                        <div fxFlex="15">
+                                            <span>Customer Gender</span>
+                                        </div>
+                                        <div fxFlex="10">
+                                            <span>As of Month selected</span>
+                                        </div>
+                                        <div fxFlex="75">
+                                            <app-progress-bar [progressData]="gender"></app-progress-bar>
+                                        </div>
+                                    </div>
+                                </mat-card>
+                            </div>
+                            <div fxFlex="50" class="border-out">
+                                <mat-card>
+                                    <div fxLayout="column" fxLayoutAlign="space-around none">
+                                        <div fxFlex="10">
+                                            <span>Payment Method</span>
+                                        </div>
+                                        <div fxFlex="90">
+                                            <div id="plotPayment"></div>
+                                        </div>
+                                    </div>
+                                </mat-card>
+                            </div>
+                        </div>
+                    </div>
+                    <div fxFlex="50">
+                        <div fxLayout="column" fxLayoutAlign="space-around none">
+                            <div fxFlex="50" class="border-out">
+                                <mat-card>
+                                    <div fxLayout="column" fxLayoutAlign="space-around none">
+                                        <div fxFlex="15">
+                                            <span>New v/s Return</span>
+                                        </div>
+                                        <div fxFlex="10">
+                                            <span>As of Month selected</span>
+                                        </div>
+                                        <div fxFlex="75">
+                                            <app-progress-bar [progressData]="customer"></app-progress-bar>
+                                        </div>
+                                    </div>
+                                </mat-card>
+                            </div>
+                            <div fxFlex="50" class="border-out">
+                                <mat-card>
+                                    <div fxLayout="column" fxLayoutAlign="space-around none">
+                                        <div fxFlex="10">
+                                            <span>Profits</span>
+                                        </div>
+                                        <div fxFlex="90">
+                                            <div id="plotProfits"></div>
+                                        </div>
+                                    </div>
+                                </mat-card>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div fxFlex="40">
+                <div fxLayout="row" fxLayoutAlign="space-around none" class="border-out">
+                    <mat-card>
+                        <div class="mat-elevation-z0">
+                            <table mat-table [dataSource]="dataSource" style="width: 100%;">
+                          
+                              <!-- Position Column -->
+                              <ng-container matColumnDef="position">
+                                <th mat-header-cell *matHeaderCellDef> No. </th>
+                                <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+                              </ng-container>
+                          
+                              <!-- Name Column -->
+                              <ng-container matColumnDef="name">
+                                <th mat-header-cell *matHeaderCellDef> Name </th>
+                                <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+                              </ng-container>
+                          
+                              <!-- Weight Column -->
+                              <ng-container matColumnDef="weight">
+                                <th mat-header-cell *matHeaderCellDef> Weight </th>
+                                <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
+                              </ng-container>
+                          
+                              <!-- Symbol Column -->
+                              <ng-container matColumnDef="symbol">
+                                <th mat-header-cell *matHeaderCellDef> Symbol </th>
+                                <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+                              </ng-container>
+                          
+                              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                              <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                            </table>
+                          
+                            <mat-paginator [pageSizeOptions]="[6, 10, 20]" showFirstLastButtons></mat-paginator>
+                          </div>
+                          <div style="width: 100%;">
+                            <button mat-raised-button type="button" color="primary" style="width: 100%;">Show More</button>
+                          </div>
+                    </mat-card>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div fxLayout="row" fxLayoutAlign="space-around none">
+            <div fxFlex="50" class="border-out">
+                <mat-card>
+                    <div fxLayout="column" fxLayoutAlign="space-around none">
+                        <div fxFlex="10">
+                            Average Waited Time
+                        </div>
+                        <div fxFlex="90">
+                            <div fxLayout="row" fxLayoutAlign="space-around center">
+                                <div fxFlex="20">
+                                    <p class="diff_demo">16 mins</p>
+                                    <span class="copy_demo1">Average Waiting Time</span>
+                                </div>
+                                <div fxFlex="80" class="border-layout">
+                                    <!-- <mat-card> -->
+                                        <div class="mat-elevation-z0">
+                                            <table mat-table [dataSource]="dataSource" style="width: 100%;">
+                                          
+                                              <!-- Position Column -->
+                                              <ng-container matColumnDef="position">
+                                                <th mat-header-cell *matHeaderCellDef> No. </th>
+                                                <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+                                              </ng-container>
+                                          
+                                              <!-- Name Column -->
+                                              <ng-container matColumnDef="name">
+                                                <th mat-header-cell *matHeaderCellDef> Name </th>
+                                                <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+                                              </ng-container>
+                                          
+                                              <!-- Weight Column -->
+                                              <ng-container matColumnDef="weight">
+                                                <th mat-header-cell *matHeaderCellDef> Weight </th>
+                                                <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
+                                              </ng-container>
+                                          
+                                              <!-- Symbol Column -->
+                                              <ng-container matColumnDef="symbol">
+                                                <th mat-header-cell *matHeaderCellDef> Symbol </th>
+                                                <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+                                              </ng-container>
+                                          
+                                              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                                              <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                                            </table>
+                                          
+                                            <mat-paginator [pageSizeOptions]="[4, 10, 20]" showFirstLastButtons></mat-paginator>
+                                          </div>
+                                          <div style="width: 100%;">
+                                            <button mat-raised-button type="button" color="primary" style="width: 100%;">Show More</button>
+                                          </div>
+                                    <!-- </mat-card> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </mat-card>
+            </div>
+            <div fxFlex="50" class="border-out">
+                <mat-card>
+                    <div fxLayout="column" fxLayoutAlign="space-around none">
+                        <div fxFlex="10">
+                            Appointment Logs
+                        </div>
+                        <div fxFlex="90">
+                            <div fxLayout="row" fxLayoutAlign="space-around center">
+                                <div fxFlex="20">
+                                    <div fxLayout="column" fxLayoutAlign="space-around none">
+                                        <div fxFlex="30">
+                                            <p class="diff_demo">27</p>
+                                            <span class="copy_demo1">No Show</span>
+                                        </div>
+                                        <div fxFlex="30">
+                                            <p class="diff_demo">17</p>
+                                            <span class='copy_demo1'>Cancelled</span>
+                                        </div>
+                                        <div fxFlex="30">
+                                            <p class="diff_demo">25</p>
+                                            <span class="copy_demo1">Late</span>
+                                        </div>
+                                    </div>
+                                   
+                                </div>
+                                <div fxFlex="80" class="border-layout">
+                                    <!-- <mat-card> -->
+                                        <div class="mat-elevation-z0">
+                                            <table mat-table [dataSource]="dataSource" style="width: 100%;">
+                                          
+                                              <!-- Position Column -->
+                                              <ng-container matColumnDef="position">
+                                                <th mat-header-cell *matHeaderCellDef> No. </th>
+                                                <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+                                              </ng-container>
+                                          
+                                              <!-- Name Column -->
+                                              <ng-container matColumnDef="name">
+                                                <th mat-header-cell *matHeaderCellDef> Name </th>
+                                                <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+                                              </ng-container>
+                                          
+                                              <!-- Weight Column -->
+                                              <ng-container matColumnDef="weight">
+                                                <th mat-header-cell *matHeaderCellDef> Weight </th>
+                                                <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
+                                              </ng-container>
+                                          
+                                              <!-- Symbol Column -->
+                                              <ng-container matColumnDef="symbol">
+                                                <th mat-header-cell *matHeaderCellDef> Symbol </th>
+                                                <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+                                              </ng-container>
+                                          
+                                              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                                              <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                                            </table>
+                                          
+                                            <mat-paginator [pageSizeOptions]="[4, 10, 20]" showFirstLastButtons></mat-paginator>
+                                          </div>
+                                          <div style="width: 100%;">
+                                            <button mat-raised-button type="button" color="primary" style="width: 100%;">Show More</button>
+                                          </div>
+                                    <!-- </mat-card> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+        </div>
+
+
+    <!-- </ng-container> -->
+    <!-- <ng-container #secondRow> -->
+
+    <!-- </ng-container> -->
+    <ng-container #thirdRow>
+
+    </ng-container>
+    <ng-container #fourthRow>
+
+    </ng-container>
+    <ng-container #fifthRow>
+
+    </ng-container>
+</ng-container>
